@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<a href="test?id=17">Cl</a>
+
+<script type="text/javascript">
+
+
+fetch('test?id=7') // Replace with your desired URL
+.then(response => response.json()) // Parse the response as JSON
+.then(data => {
+  // Handle the data here
+  console.log(data);
+})
+.catch(error => {
+  // Handle any errors
+  console.error('Error fetching data:', error);
+});
+</script>
+
+</body>
+</html>

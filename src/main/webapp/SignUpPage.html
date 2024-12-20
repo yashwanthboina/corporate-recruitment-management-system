@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Finder/Sign Up</title>
+  <style>
+
+    *{
+      margin: 0px;
+      padding: 0px;
+      border: none;
+    }
+
+    html,body{
+      height: 100%;
+      margin: 0px;
+    }
+    .container{
+      display: grid;
+      background-color: white;
+      height: 100%;
+      place-items: center;
+    }
+
+    .card{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 10px;
+    }
+
+    .heading{
+      width: 300px;
+      background-color: rgb(61, 117, 117);
+      height: 40px;
+      color: white;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .container2{
+      border-width: 2px;
+      border-left: solid rgb(61, 117, 117);
+      border-bottom: solid rgb(61, 117, 117);
+      border-right: solid rgb(61, 117, 117);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      padding: 15px;
+      background-color: whitesmoke;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 80px;
+      padding-top: 25px;
+    }
+
+    .inputCan{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .inputHeading{
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .inputBox{
+      height: 34px;
+      padding-left: 10px;
+      font-size: 14px;
+    }
+
+    .btnCreate{
+      width: 90%;
+      height: 33px;
+      background-color: rgb(61, 117, 117);
+      color: white;
+      border-radius: 5px;
+      margin-top: 10px;
+      justify-self: center;
+    }
+
+    .btnCreate:hover{
+      background-color: rgb(21, 77, 77);
+    }
+
+    .signIntxt:hover{
+      color: green;
+      cursor: pointer;
+      scale: 1.1;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    
+    <div class="card">
+      <div class="heading">Job Finder</div>
+      <div class="container2">
+        <div class="inputCan">
+          <p class="inputHeading">Name</p>
+          <input type="text" placeholder="Enter your name" class="inputBox nameInputSignUp">
+        </div>
+
+        <div class="inputCan" style="margin-top: 10px;">
+          <p class="inputHeading">Email</p>
+          <input type="email" placeholder="Enter your Email" class="inputBox emailInputSignUp">
+        </div>
+
+        <div class="inputCan" style="margin-top: 10px;">
+          <p class="inputHeading">Password</p>
+          <input type="password" placeholder="Enter password" class="inputBox passwordInputSignUp">
+        </div>
+
+        <button class="btnCreate" onClick="signUpBtn()">Create Account</button>
+
+        <div style="display: flex;flex-direction: row;width: 100%;justify-content: right;margin-top: 7px;">
+          <p style="font-size: 12px;">Already have an account?</p>
+          <p style="font-size: 12px;margin-left: 3px;color: rgb(61, 117, 117);" class="signIntxt" onClick="moveToSignInPage()">Sign In</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+	  function moveToSignInPage(){
+		  window.location.href = 'SignInPage.html';
+	  }
+	  
+	  function signUpBtn(){
+		  let dataInfo;
+		  
+		  let dataSend={
+				  name:document.querySelector(".nameInputSignUp").value,
+				  email:document.querySelector(".emailInputSignUp").value,
+				  password:document.querySelector(".passwordInputSignUp").value
+		  };
+		  
+		  if(dataSend.email && dataSend.password && dataSend.name){
+			  fetch('signUp', {
+		          method: 'POST',
+		          headers: {
+		              'Content-Type': 'application/json'
+		          },
+		          body: JSON.stringify(dataSend)
+		      })
+		      .then(response => response.json())
+		      .then(data => {
+		          //console.log(JSON.stringify(data));
+		          console.log(data.message);
+		          dataInfo=data;
+		          
+		          if(data.code === 1){
+		        	  window.location.href = 'SignInPage.html';
+		          }
+		      })
+		      .catch(error => {
+		          console.error('There has been a problem with your fetch operation:', error);
+		      });  
+		  }else{
+			  alert("Incomplete information.");
+		  }
+	  }
+  </script>
+</body>
+</html>

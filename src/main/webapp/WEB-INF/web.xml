@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>CorporateRecruitmentManagementWebApplication</display-name>
+  <welcome-file-list>
+    <welcome-file>home.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+        <servlet-name>abc</servlet-name>
+        <servlet-class>com.praneethWorks.Pro.Test</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>abc</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>q</servlet-name>
+        <servlet-class>com.praneethWorks.Pro.Controller.HomePageController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>q</servlet-name>
+        <url-pattern>/homePage</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>sign_in</servlet-name>
+        <servlet-class>com.praneethWorks.Pro.Controller.SignInController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sign_in</servlet-name>
+        <url-pattern>/signIn</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>sign_up</servlet-name>
+        <servlet-class>com.praneethWorks.Pro.Controller.SignUpController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sign_up</servlet-name>
+        <url-pattern>/signUp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>verify_token</servlet-name>
+        <servlet-class>com.praneethWorks.Pro.Controller.VeryifyTokenController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>verify_token</servlet-name>
+        <url-pattern>/verifyToken</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>post_job</servlet-name>
+        <servlet-class>com.praneethWorks.Pro.Controller.PostAJobController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>post_job</servlet-name>
+        <url-pattern>/postjob</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>findJob</servlet-name>
+        <servlet-class>com.praneethWorks.Pro.Controller.JobController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>findJob</servlet-name>
+        <url-pattern>/job</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>accountfetch</servlet-name>
+        <servlet-class>com.praneethWorks.Pro.Controller.FetchAccountDetails</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>accountfetch</servlet-name>
+        <url-pattern>/accountFetch</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>updateAcc</servlet-name>
+        <servlet-class>com.praneethWorks.Pro.Controller.UpdateUserData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateAcc</servlet-name>
+        <url-pattern>/updateAccount</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+</web-app>

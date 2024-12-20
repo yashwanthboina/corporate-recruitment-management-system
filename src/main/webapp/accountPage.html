@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      border: none;
+    }
+
+    body{
+      display: flex;
+      flex-direction: row;
+    }
+
+
+    .navBar{
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      background-color: rgb(61, 117, 117);
+      width: 100%;
+      height: 55px;
+      justify-content: center;
+      align-items: center;
+      top: 0px;
+      z-index: 2;
+    }
+
+    .navBar p{
+      font-size: 40px;
+      color: white;
+      justify-self: center;
+    }
+
+    .append{
+      position: absolute;
+      right: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* .account{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: white;
+    } */
+
+    .append button{
+      width: 90px;
+      height: 35px;
+      color: black;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .append button:hover{
+      background-color: rgb(231, 229, 229);
+    }
+
+
+
+
+    .Container_accountPage{
+      scale:1.02;
+      background-color: whitesmoke;
+      width: 80%;
+      margin: 40px;
+      margin-top: 100px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 7px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    }
+
+    .nameAccount{
+      font-size: 26px;
+      font-weight: 650;
+    }
+
+    .containerSkills_POST{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-left: 10px;
+    }
+
+    .containerSkills_POST p{
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 17px;
+    }
+
+    .SkillsTags_POST,.SkillsTags_Enter_POST{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .SkillsTags_POST div{
+      background-color: rgb(206, 203, 203);
+      padding-left: 7px;
+      padding-right: 3px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      border-radius: 3px;
+      color: black;
+      font-weight: 450;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 0px;
+    }
+
+    .SkillsTags_Enter_POST div{
+      height: 26px;
+      background-color: rgb(206, 203, 203);
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      padding-left: 5px;
+      border-radius: 3px;
+      gap: 5px;
+      padding-right: 5px;
+    }
+
+    .SkillsTags_Enter_POST div input{
+      width: 150px;
+      height: 20px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+
+    .container_SavedJobs{
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-left: 10px;
+      background-color: rgb(228, 228, 228);
+      padding: 5px;
+      border-radius: 7px;
+      gap: 7px;
+      width: 80%;
+    }
+
+    .container_SavedJobs p{
+      font-size: 16px;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+
+    .items_container_SavedJobs{
+      background-color: whitesmoke;
+      display: flex;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-left: 15px;
+      padding-right: 10px;
+      border-radius: 6px;
+      align-items: center;
+      margin-left: 20px;
+    }
+
+    .items_container_SavedJobs p{
+      font-weight: 400;
+    }
+
+    .submetBtn{
+      width: 100px;
+      height: 38px;
+      border: none;
+      background-color: rgb(255, 174, 0);
+      color: white;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    
+    .submetBtn:hover{
+      background-color: rgb(255, 145, 0);
+
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="navBar">
+    <p>Job Finder</p>
+    <div class="append">
+      <!-- <button>Post a Job</button> -->
+      <!-- <div class="account"></div> -->
+    </div>
+  </div> 
+
+  <div class="Container_accountPage">
+    <p class="nameAccount">Hi, Praneeth</p>
+    
+    <div class="containerSkills_POST">
+      <p>Skills:</p>
+      <div class="SkillsTags_POST containerSkillsAccount">
+        <div>Java<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;" onclick=""></div>
+        <div>Web Development<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+        <div>DSA<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+      </div>
+      <div>
+        <div class="SkillsTags_Enter_POST">
+          <div>
+            <input type="text" placeholder="text" class="input_Skills">
+            <img src="https://th.bing.com/th/id/OIP.ykd68YWQgm0520T8eXC6YQHaIe?rs=1&pid=ImgDetMain" style="width: 20px;" onclick="addSkillTag()"> 
+          </div>
+        </div>
+      </div>
+      <!-- <p class="Add_containerSkills_POST">+</p> -->
+    </div>
+
+    <div class="container_SavedJobs savedJobsContainer">
+      <p>Saved Jobs:</p>
+
+      <div class="items_container_SavedJobs">
+        <p>Fundraising work from home job/internship at Help And Hygiene For All Foundation By Internshala</p>
+      </div>
+
+      <div class="items_container_SavedJobs">
+        <p>Fundraising work from home job/internship at Help And Hygiene For All Foundation By Internshala</p>
+      </div>
+  
+    </div>
+
+    <div class="container_SavedJobs postJobsContainer">
+      <p>Posted Jobs:</p>
+
+      <div class="items_container_SavedJobs">
+        <p>Fundraising work from home job/internship at Help And Hygiene For All Foundation By Internshala</p>
+      </div>
+
+      <div class="items_container_SavedJobs">
+        <p>Fundraising work from home job/internship at Help And Hygiene For All Foundation By Internshala</p>
+      </div>
+  
+    </div>
+
+    <div style="margin-top: 10px;margin-left: 10px;display: flex;flex-direction: row;flex-wrap: wrap;gap: 5px;">
+      <input type="checkbox" class="updateCheckAccount">
+      <p style="font-size: 14px;">Get Updates via mail.</p>
+    </div>
+
+    <div style="display: flex;justify-content: end;">
+      <button class="submetBtn" onclick="savaDataAccount()">Save</button>
+    </div>
+  </div>
+  
+  <script>
+  
+  let nameJS=document.querySelector(".nameAccount");
+  let skillsContainerJS=document.querySelector(".containerSkillsAccount");
+  let saveJobsContainerJS=document.querySelector(".savedJobsContainer");
+  let postJobsContainerJS=document.querySelector(".postJobsContainer");
+  let checkBoxJS=document.querySelector(".updateCheckAccount");
+  
+  const token=getToken('tokenCorporateRecruitmentManagementWebApplication');
+  
+  let dataInfo;
+  
+  if (token) {
+	  
+	  fetch('accountFetch?token='+token)
+	    //fetch(`accountFetch?token=${token}`)
+		.then(response => response.json())
+		.then(data => {
+		  console.log(data);
+		  dataInfo=data;
+		  setDataIntoBox();
+		})
+		.catch(error => {
+		  console.error('Error fetching data:', error);
+		});
+	  
+  } else {
+  	window.location.href='SignInPage.html';
+  }
+  
+  function setDataIntoBox(){
+	  nameJS.innerText=`Hi, ${dataInfo.name}`;
+	  
+	  let htmlInner=``;
+	  for(let i=0;i<dataInfo.skills.length;i++){
+		  htmlInner+=`<div>${dataInfo.skills[i]}<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;" onclick="removeSkill(${i})"></div>`
+	  }
+	  
+	  skillsContainerJS.innerHTML=htmlInner;
+	  
+	  htmlInner=`<p>Saved Jobs:</p>`;
+	  for(let i=0;i<dataInfo.savedJobs.length;i++){
+		  htmlInner+=`<div class="items_container_SavedJobs">
+		        <p>${dataInfo.savedJobs[i].title}</p>
+		      </div>`;
+	  }
+	  
+	  saveJobsContainerJS.innerHTML=htmlInner;
+	  
+	  
+	  htmlInner=`<p>Posted Jobs:</p>`;
+	  for(let i=0;i<dataInfo.postedJobs.length;i++){
+		  htmlInner+=`<div class="items_container_SavedJobs">
+		        <p>${dataInfo.postedJobs[i].title}</p>
+		      </div>`;
+	  }
+	  
+	  postJobsContainerJS.innerHTML=htmlInner;
+	  
+	  checkBoxJS.checked=dataInfo.getUpates;
+	  	  
+  }
+  
+  function addSkillTag(){
+	  let inputBox=document.querySelector(".input_Skills");
+	  if(inputBox.value){
+		  dataInfo.skills.push(inputBox.value);
+		  
+		  let htmlInner=``;
+		  for(let i=0;i<dataInfo.skills.length;i++){
+			  htmlInner+=`<div>${dataInfo.skills[i]}<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;" onclick="removeSkill(${i})"></div>`
+		  }
+		  
+		  skillsContainerJS.innerHTML=htmlInner;
+		  
+		  inputBox.value="";
+	  }
+  }
+  
+  function removeSkill(x){
+	  dataInfo.skills.splice(x,1);
+	  
+	  let htmlInner=``;
+	  for(let i=0;i<dataInfo.skills.length;i++){
+		  htmlInner+=`<div>${dataInfo.skills[i]}<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;" onclick="removeSkill(${i})"></div>`
+	  }
+	  
+	  skillsContainerJS.innerHTML=htmlInner;
+  }
+  
+  function savaDataAccount(){
+	  let dataSend={
+		uid:dataInfo.uid,
+		skills:dataInfo.skills,
+		getUpates:checkBoxJS.checked
+	  };
+	  
+	  fetch('updateAccount', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dataSend)
+      })
+      .then(response => response.json())
+      .then(data => {
+          //console.log(JSON.stringify(data));
+          if(data.code!==1){
+        	  alert(data.message)
+          }
+          console.log(data.message);
+      })
+      .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+      });
+	  
+  }
+  
+  
+  function getToken(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) {
+          return decodeURIComponent(parts.pop().split(';').shift());
+      }
+  }
+  </script>
+  
+</body>
+</html>

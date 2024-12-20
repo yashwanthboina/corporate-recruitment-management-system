@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Finder/Post Job</title>
+</head>
+
+<style>
+  *{
+    border: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .containerPostAJob{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+
+  .container_POST{
+    width: 80%;
+    height: auto;
+    background-color: whitesmoke;
+    border-bottom: 4px solid rgb(61, 117, 117);
+    border-right: 4px solid rgb(61, 117, 117);
+    border-left: 4px solid rgb(61, 117, 117);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+
+  .heading_POST{
+    background-color: rgb(61, 117, 117);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 10px 10px 0px 0px ;
+  }
+
+  .inputBox_POST{
+    width: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputBox_POST p{
+    font-size: 24px;
+  }
+
+  .inputBox_POST input{
+    height: 40px;
+    padding-left: 10px;
+    margin-top: 7px;
+    font-size: 18px;
+    margin-left: 7px;
+    border-radius: 10px;
+    border:1px solid rgb(39, 39, 39);
+  }
+
+  .containerQualification_POST,.containerExperence_POST,.containerSkills_POST,.Experence_POST {
+      margin-top: 10px;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .containerQualification_POST p,.containerExperence_POST p,.containerSkills_POST p,.Experence_POST p,.ContainerDescription_POST p,.ContainerResponsibilities_POST p{
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 24px;
+    }
+
+    .QualificationTags_POST,.QualificationTags_Enter_POST,.ExperenceTags_POST,.ExperenceTags_Enter_POST,.SkillsTags_POST,.SkillsTags_Enter_POST{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .QualificationTags_POST div,.ExperenceTags_POST div,.SkillsTags_POST div{
+      background-color: rgb(206, 203, 203);
+      padding-left: 7px;
+      padding-right: 3px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      border-radius: 3px;
+      color: black;
+      font-weight: 450;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 0px;
+    }
+
+    .QualificationTags_Enter_POST div,.ExperenceTags_Enter_POST div,.SkillsTags_Enter_POST div{
+      height: 26px;
+      background-color: rgb(206, 203, 203);
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      padding-left: 5px;
+      border-radius: 3px;
+      gap: 5px;
+      padding-right: 5px;
+    }
+
+
+    .QualificationTags_Enter_POST div input,.ExperenceTags_Enter_POST div input,.SkillsTags_Enter_POST div input{
+      width: 150px;
+      height: 20px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+
+    .Add_containerQualification_POST,.Add_containerExperence_POST,.Add_containerSkills_POST{
+      width: 24px;
+      height: 24px;
+      background-color: rgb(206, 203, 203);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-weight: bold;
+      border-radius: 3px;
+      visibility: hidden;
+    }
+
+    .Experence_POST input{
+      width: 200px;
+      height: 29px;
+      padding-left: 8px;
+      border-radius: 8px;
+      border:1px solid rgb(39, 39, 39);
+    }
+
+    .ContainerDescription_POST,.ContainerResponsibilities_POST{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    .ContainerDescription_POST textarea,.ContainerResponsibilities_POST textarea{
+      margin-top: 10px;
+      width: auto;
+      margin-right: 10px;
+      border-radius: 10px;
+      height: 200px;
+      resize: none;
+      padding: 10px;
+      font-size: 20px;
+      border:1px solid rgb(39, 39, 39);
+    }
+
+    .btn_POST{
+      width: 100px;
+      height: 38px;
+      border: none;
+      background-color: rgb(255, 174, 0);
+      color: white;
+      border-radius: 5px;
+      margin-top: 20px;
+
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn_POST:hover{
+      background-color: rgb(255, 145, 0);
+    }
+
+</style>
+
+<body>
+
+  <div class="containerPostAJob">
+    <div class="container_POST">
+      <div class="heading_POST">Post a Job</div>
+
+      <div class="inputBox_POST">
+        <p>Title:</p>
+        <input type="text" placeholder="Enter Title" class="inputTitlePost">
+      </div>
+
+      <div class="inputBox_POST">
+        <p>Company Name:</p>
+        <input type="text" placeholder="Enter Company Name" class="inputCompanyPost">
+      </div>
+
+      <div class="inputBox_POST">
+        <p>Location:</p>
+        <input type="text" placeholder="Enter Job Location" class="inputLocationPost">
+      </div>
+
+      <div class="containerQualification_POST">
+        <p>Qualification:</p>
+        <div class="QualificationTags_POST QualificationTags">
+          <div>PostGraduate<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+          <div>UnderGraduate<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+          <div>PostGraduate<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+          <div>UnderGraduate<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+          
+        </div>
+        <div>
+          <div class="QualificationTags_Enter_POST QualificationInput">
+            <div>
+              <input type="text" placeholder="text" class="input_Qualification">
+              <img src="https://cdn.picpng.com/check/check-correct-green-mark-tick-88718.png" style="width: 20px;" onclick="addQualificationTag()"> 
+            </div>
+          </div>
+        </div>
+        <p class="Add_containerQualification_POST addQualification">+</p>
+      </div>
+
+      <!-- <div class="containerExperence_POST">
+        <p>Experence:</p>
+        <div class="ExperenceTags_POST">
+          <div>Experenced with 5 years<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+          <div>Freshers<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+        </div>
+        <div>
+          <div class="ExperenceTags_Enter_POST">
+            <div>
+              <input type="text" placeholder="text">
+              <img src="https://cdn.picpng.com/check/check-correct-green-mark-tick-88718.png" style="width: 20px;"> 
+            </div>
+          </div>
+        </div>
+        <p class="Add_containerExperence_POST">+</p>
+      </div> -->
+
+      <div class="Experence_POST">
+        <p>Experence:</p>
+        <input type="text" placeholder="Enter Experence Required" class="inputExperencePost">
+      </div>
+
+      <div class="containerSkills_POST">
+        <p>Skills:</p>
+        <div class="SkillsTags_POST">
+          <div>Java<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;" onclick=""></div>
+          <div>Web Development<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+          <div>DSA<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;"></div>
+        </div>
+        <div>
+          <div class="SkillsTags_Enter_POST">
+            <div>
+              <input type="text" placeholder="text" class="input_Skills">
+              <img src="https://th.bing.com/th/id/OIP.ykd68YWQgm0520T8eXC6YQHaIe?rs=1&pid=ImgDetMain" style="width: 20px;" onclick="addSkillTag()"> 
+            </div>
+          </div>
+        </div>
+        <p class="Add_containerSkills_POST">+</p>
+      </div>
+
+      <div class="ContainerDescription_POST">
+        <p style="text-align: left;">Description:</p>
+        <textarea class="DescriptionAreaPost"></textarea>
+      </div>  
+      
+      <div class="ContainerResponsibilities_POST">
+        <p style="text-align: left;">Key Responsibilities:</p>
+        <textarea style="height: 300px;" class="inputResponsibilitiesPost"></textarea>
+      </div> 
+      
+      <div class="ContainerDescription_POST">
+        <p style="text-align: left;">Contact:</p>
+        <textarea style="height: 80px;" class="inputContactPost" class="inputContactPost"></textarea>
+      </div> 
+
+     <button class="btn_POST" onclick="postBtn()">Post</button>
+
+    </div>
+  </div>
+
+  <script>
+
+    //Qualification
+    let QualificationTagsColl=[];
+    let QualificationTagContainer=document.querySelector(".QualificationTags");//qualification tags
+    QualificationTagContainer.innerHTML='';
+
+    function addQualificationTag(){
+      const val=document.querySelector(".input_Qualification");
+      if(val.value){
+        QualificationTagsColl.push(val.value);
+        let htmmlSet='';
+        for(let i=0;i<QualificationTagsColl.length;i++){
+          htmmlSet+=`<div>${QualificationTagsColl[i]}<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;" onclick="removeQualificationTag(${i})"></div>`;
+        }
+        QualificationTagContainer.innerHTML=htmmlSet;
+        val.value='';
+      }
+    }
+
+    function removeQualificationTag(x){
+      QualificationTagsColl.splice(x, 1);
+      let htmmlSet='';
+        for(let i=0;i<QualificationTagsColl.length;i++){
+          htmmlSet+=`<div>${QualificationTagsColl[i]}<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;" onclick="removeQualificationTag(${i})"></div>`;
+        }
+
+        QualificationTagContainer.innerHTML=htmmlSet;
+    }
+
+
+    //Skill tags
+
+    let skillTagsCol=[];
+    let skillTagsContainer=document.querySelector(".SkillsTags_POST");
+    skillTagsContainer.innerHTML='';
+    function addSkillTag(){
+      const val=document.querySelector(".input_Skills");
+      if(val.value){
+        skillTagsCol.push(val.value);
+
+        let htmlInner='';
+        for(let i=0;i<skillTagsCol.length;i++){
+          htmlInner+=`<div>${skillTagsCol[i]}<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;" onclick="removeSkillTag(${i})"></div>`;
+        }
+        skillTagsContainer.innerHTML=htmlInner;
+        val.value='';
+      }
+    }
+
+    function removeSkillTag(x){
+      skillTagsCol.splice(x,1);
+
+      let htmlInner='';
+        for(let i=0;i<skillTagsCol.length;i++){
+          htmlInner+=`<div>${skillTagsCol[i]}<img src="https://th.bing.com/th/id/R.a5466efcbc685822f5fa6470c51bbe50?rik=eMK0rMnX7%2b0QGg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9c4%2fzby%2f9c4zby9gi.png&ehk=5%2b5297Zjr4zG71%2bUy%2fSNcM5ifAf8%2fTe2i9JAUM6Qw5k%3d&risl=&pid=ImgRaw&r=0" style="width: 20px;" onclick="removeSkillTag(${i})"></div>`;
+        }
+        skillTagsContainer.innerHTML=htmlInner;
+    }
+
+    //--------------------------------------------------------------------
+
+    let descriptionArea=document.querySelector(".DescriptionAreaPost");
+
+    function postBtn(){
+    	
+    	const tokenGet=getToken("tokenCorporateRecruitmentManagementWebApplication");
+      	let dataSend={
+	        token:tokenGet,
+	        title:document.querySelector(".inputTitlePost").value,
+	        companyName:document.querySelector(".inputCompanyPost").value,
+	        location:document.querySelector(".inputLocationPost").value,
+	        qualification:QualificationTagsColl,
+	        experence:document.querySelector(".inputExperencePost").value,
+	        skills:skillTagsCol,
+	        description:document.querySelector(".DescriptionAreaPost").value,
+	        responsibilities:document.querySelector(".inputResponsibilitiesPost").value,
+	        contact:document.querySelector(".inputContactPost").value
+      	};
+
+      if(dataSend.title && dataSend.companyName && dataSend.location && dataSend.qualification.length>=1 && dataSend.experence && dataSend.skills.length>=1 && dataSend.description && dataSend.responsibilities && dataSend.experence){
+        //console.log("Ok");
+
+        fetch('postjob', {
+	          method: 'POST',
+	          headers: {
+	              'Content-Type': 'application/json'
+	          },
+	          body: JSON.stringify(dataSend)
+	      })
+	      .then(response => response.json())
+	      .then(data => {
+	          //console.log(JSON.stringify(data));
+	          console.log(data.message);
+	          if(data.code===1){
+	        	  window.location.href='home.html';
+	          }else{
+	        	  alert("Unable to post.");
+	        	  window.location.href='home.html';
+	          }
+	      })
+	      .catch(error => {
+	          console.error('There has been a problem with your fetch operation:', error);
+	      });
+
+        
+      }else{
+        alert("Incomplete Information");
+      }
+
+    }
+    
+    function getToken(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) {
+            return decodeURIComponent(parts.pop().split(';').shift());
+        }
+    }
+
+  </script>
+  
+</body>
+</html>

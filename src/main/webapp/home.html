@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Finder/Home</title>
+
+  <style>
+
+    *{
+      margin: 0px;
+      padding: 0pc;
+    }
+
+    body{
+      background-color: white;
+    }
+
+    .navBar{
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      background-color: rgb(61, 117, 117);
+      width: 100%;
+      height: 55px;
+      justify-content: center;
+      align-items: center;
+      top: 0px;
+      z-index: 2;
+    }
+
+    .navBar p{
+      font-size: 40px;
+      color: white;
+      justify-self: center;
+    }
+
+    .append{
+      position: absolute;
+      right: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .account{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .append button{
+      width: 90px;
+      height: 35px;
+      color: black;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .append button:hover{
+      background-color: rgb(231, 229, 229);
+    }
+
+    .bodyTag{
+      position: relative;
+      width: 100%;
+      background-color: white;
+      top: 55px;
+      z-index: 0;
+    }
+
+    .loader{
+      position: absolute;
+      border: 16px solid whitesmoke;
+      border-bottom: 16px solid rgb(129, 129, 173);
+      border-top: 16px solid rgb(129, 129, 173);
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      animation: loadAnm 2s linear infinite;
+      visibility: visible;
+      left: 48%;
+      margin-top: 300px;
+      transform: translate(-50%,-50%);
+    }
+
+    @keyframes loadAnm{
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .showJobContainer{
+      visibility: collapse;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 30px;
+      padding-bottom: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    }
+
+    .item{
+      width: 75%;
+      background-color: rgb(243, 226, 226);
+      border: 2px solid grey;
+      border-radius: 7px;
+      padding: 12px;
+      transition: 0.3s;
+    }
+
+    .item:hover{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      scale: 1.0005;
+    }
+
+    .title{
+      width: 90%;
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin-left : 0px;
+    }
+
+    .copName{
+      margin-top: 4px;
+      font-size: 1.25rem;
+      font-weight: 450;
+      margin-left: 3px;
+    }
+
+    .qualification {
+      margin-top: 10px;
+      margin-left: 3px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap:wrap;
+      gap: 5px;
+    }
+
+    .qualification p{
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .qualification div{
+      background-color: rgb(240, 239, 239);
+      padding-left: 7px;
+      padding-right: 7px;
+      border-radius: 3px;
+      color: black;
+      font-weight: 450;
+    }
+
+    .expCatogery{
+      margin-top: 10px;
+      margin-left: 3px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .expCatogery p{
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .expCatogery div{
+      background-color: rgb(240, 239, 239);
+      padding-left: 7px;
+      padding-right: 7px;
+      border-radius: 3px;
+      color: black;
+      font-weight: 450;
+    }
+
+    .submetBtn{
+      width: 100px;
+      height: 38px;
+      border: none;
+      background-color: rgb(255, 174, 0);
+      color: white;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    
+    .submetBtn:hover{
+      background-color: rgb(255, 145, 0);
+
+    }
+  </style>
+</head>
+<body>
+    <div class="navBar">
+      <p>Job Finder</p>
+      <div class="append">
+        <button onClick="postJobBtn()">Post a Job</button>
+        <div class="account" onClick="accountBtn()"></div>
+      </div>
+    </div>  
+
+    <div class="bodyTag">
+      <div class="loader"></div>
+
+      <div class="showJobContainer">
+        <div class="item">
+          <p class="title">Fundraising work from home job/internship at Help And Hygiene For All Foundation By Internshala</p>
+          <p class="copName">Pragadas Technology Private Limited</p>
+          <div class="qualification">
+            <p>Qualification:</p>
+            <div>PostGraduate</div>
+            <div>UnderGraduate</div>
+          </div>
+          <div class="expCatogery">
+            <p>Experence:</p>
+            <div>Experenced with 5 years</div>
+            <div>Freshers</div>
+          </div>
+          <div style="display: flex;justify-content: center;">
+            <button class="submetBtn">View Details</button>
+          </div>
+        </div>
+
+        <div class="item">
+          <p class="title">Title</p>
+          <p class="copName">Company name</p>
+          <div class="qualification">
+            <p>Qualification:</p>
+            <div>PostGraduate</div>
+          </div>
+          <div class="expCatogery">
+            <p>Experence:</p>
+            <div>Experenced with 5 years</div>
+            <div>Freshers</div>
+          </div>
+          <div style="display: flex;justify-content: center;">
+            <button class="submetBtn">View Details</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+	    let dataInfo;
+	    fetchData();
+	    document.querySelector(".loader").style.visible="collapse";
+        document.querySelector(".showJobContainer").style.visible="visible";
+	    function fetchData(){
+	        fetch('homePage', {
+	          method: 'POST',
+	          headers: {
+	              'Content-Type': 'application/json'
+	          },
+	          body: JSON.stringify({ })
+	      })
+	      .then(response => response.json())
+	      .then(data => {
+	          //console.log(JSON.stringify(data));
+	          console.log(data.message)
+	          dataInfo=data;
+	          document.querySelector(".loader").style.visibility ='collapse';
+	          document.querySelector(".showJobContainer").style.visibility ="visible";
+	          setJobContainer();
+	      })
+	      .catch(error => {
+	          console.error('There has been a problem with your fetch operation:', error);
+	      });
+	    }
+	    
+	    /*function setJobContainer(){
+	    	console.log(dataInfo.posts[0]);
+	    }*/
+	    
+	    function setJobContainer(){
+	        let htmlSET='';
+	        for(let i =0;i<dataInfo.posts.length;i++){
+	          htmlSET+=`<div class="item">
+	          <p class="title">${dataInfo.posts[i].title}</p>
+	          <p class="copName">${dataInfo.posts[i].compName}</p>
+	          <div class="qualification"> 
+	            <p>Qualification:</p>`;
+	            for(let j=0;j<dataInfo.posts[i].qualification.length;j++){
+	              htmlSET+=`<div>${dataInfo.posts[i].qualification[j]}</div>`;
+	            }
+	          htmlSET+=`</div>
+	          <div class="expCatogery">
+	            <p>Experence:</p>
+	            <div>${dataInfo.posts[i].experence}</div>
+	          </div>`;
+	          htmlSET+=`<div style="display: flex;justify-content: center;">
+	        	  <button class="submetBtn" onclick="clickBtn(${dataInfo.posts[i].pid})">View Details</button>
+	          </div>
+	        </div>`;
+	        }
+	        document.querySelector(".showJobContainer").innerHTML=htmlSET;
+	    }
+	    
+	    function clickBtn(i){
+	    	sessionStorage.setItem('pid_corporateRecruitmentManagementWebApplication', i);
+            window.location.href = 'JobPage.html';
+	    }
+	    
+	    function postJobBtn(){
+	    	
+	    	const token = getToken('tokenCorporateRecruitmentManagementWebApplication');
+	        if (token) {
+	        	fetch(`verifyToken?token=${token}`)
+				.then(response => response.json())
+				.then(data => {
+				  console.log(data);
+				  setToken('tokenCorporateRecruitmentManagementWebApplication',token,1);
+				  window.location.href = 'PostAJob.html';
+				})
+				.catch(error => {
+				  console.error('Error fetching data:', error);
+				});
+	        } else {
+	        	window.location.href='SignInPage.html';
+	        	console.log("expired");
+	        }
+	    }
+	    
+	    function accountBtn(){
+	    	/*const token = getToken('tokenCorporateRecruitmentManagementWebApplication');
+	        if (token) {
+	            console.log(token);
+	        } else {
+	        	window.location.href='SignInPage.html';
+	        }*/
+	        
+	    	window.location.href='accountPage.html';
+	    }
+	    
+	    function getToken(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) {
+                return decodeURIComponent(parts.pop().split(';').shift());
+            }
+        }
+	    
+	    function setToken(name, value, days) {
+	  	  const date = new Date();
+	        date.setTime(date.getTime() + (days * 60  * 60 * 1000));
+	        const expires = "expires=" + date.toUTCString();
+	        const encodedValue = encodeURIComponent(value);
+	        document.cookie = name + "=" + encodedValue + ";" + expires + ";path=/";
+	    }
+    	
+    </script>
+</body>
+</html>

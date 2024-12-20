@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Finder/Job</title>
+
+  <style>
+
+    *{
+      margin: 0px;
+      padding: 0px;
+      border: none;
+    }
+
+    body{
+      background-color: whitesmoke;
+    }
+
+    .navBar{
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      background-color: rgb(61, 117, 117);
+      width: 100%;
+      height: 55px;
+      justify-content: center;
+      align-items: center;
+      top: 0px;
+      z-index: 2;
+    }
+
+    .navBar p{
+      font-size: 40px;
+      color: white;
+      justify-self: center;
+    }
+
+    .append{
+      position: absolute;
+      right: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .account{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .bodyJob{
+      position: relative;
+      width: 100%;
+      top: 55px;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      padding-top: 10px;
+      margin-bottom: 100px;
+    }
+
+    .dataContaineJob{
+      width: 80%;
+      background-color: white;
+      border-radius: 7px;
+      padding-top: 15px;
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-bottom: 15px;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    }
+
+    .titleJob{
+      font-size: 24px;
+      font-weight: 650;
+    }
+
+    .companyNameJob{
+      font-size: 20px;
+      font-weight: 450;
+    }
+
+    .LocationJob{
+      color: gray;
+      margin-top: 7px;
+    }
+
+    .QualificationContainer_skillContainer{
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 5px;
+      gap: 5px;
+    }
+
+    .QualificationContainer_skillContainer div{
+      background-color: rgb(206, 203, 203);
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 5px;
+      color: rgb(39, 38, 38);
+      font-weight: 350;
+      text-align: center;
+      font-size: 15px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
+
+    .line{
+      width: 100%;
+      border-top: 2px solid rgb(184, 182, 182);
+      margin-top: 10px;
+    }
+
+    .DescriptionJob{
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .saveBtnJob{
+      text-decoration: none;
+      background-color:  rgb(255, 174, 0);
+      padding-top: 5px;
+      padding-bottom: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      color: white;
+      margin: auto;
+      margin-top: 70px;
+      border-radius: 5px;
+    }
+
+    .saveBtnJob:hover{
+      background-color: rgb(255, 145, 0);
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="navBar">
+    <p>Job Finder</p>
+    <div class="append">
+      <!-- <button>Post a Job</button> -->
+      <div class="account"></div>
+    </div>
+  </div>  
+
+  <div class="bodyJob">
+    <div class="dataContaineJob">
+      <p class="titleJob">Fundraising work from home job/internship at Help And Hygiene For All Foundation By Internshala</p>
+      <P class="companyNameJob">Pragadas Technology Private Limited</P>
+      <p class="LocationJob">Hyderabad, Telangana, India · 2 weeks ago</p>
+      <div class="QualificationContainer_skillContainer">
+        <p>Qualification:</p>
+        <div>PostGraduate</div>
+        <div>UnderGraduate</div>
+      </div>
+
+      <div class="QualificationContainer_skillContainer">
+        <p>Skills:</p>
+        <div>Java</div>
+        <div>Web Development</div>
+        <div>Android Development</div>
+        <div>My Sql</div>
+        <div>React JS</div>
+        <div>DSA</div>
+      </div>
+
+      <div class="QualificationContainer_skillContainer">
+        <p>Experience:</p>
+        <div>6+ years</div>
+      </div>
+
+      <div class="line"></div>
+
+      <p style="margin-top: 10px;font-size: 17px;font-weight: 500;">About the Job</p>
+
+      <p class="DescriptionJob">Job Summary: We are seeking an experienced Senior Azure Data Analyst with 5 years of expertise in data analysis and a strong background in using Microsoft Azure data services. The ideal candidate will be responsible for designing, implementing, and maintaining data solutions in Azure, performing detailed data analysis, and providing actionable insights to support business decision-making.</p>
+
+      <p class="DescriptionJob" style="font-weight: 550;">Key Responsibilities:</p>
+
+      <div class="containerForKeyRes" style="margin-top: 5px;margin-left: 50px;font-size: 14px;">
+        <ul>
+          <li>Design, implement, and manage data pipelines using Azure Data Factory, Azure Databricks, and other Azure data services.</li>
+          <li>Ensure data quality and integrity by developing and enforcing data governance policies.</li>
+          <li>Manage and optimize data storage solutions using Azure Data Lake, Azure SQL Database, and other relevant Azure services.</li>
+        </ul>
+      </div>
+
+      <div class="line"></div>
+
+      <P class="DescriptionJob"  style="font-weight: 550;">Contact:</P>
+      <div style="margin-left: 30px;margin-top: 5px;">
+        <P style="font-size: 15px;">12345678@gmail.com</P>
+        <p style="font-size: 15px;">+91 89xxxxxx90</p>
+      </div>
+
+      <a href="" class="saveBtnJob">Save</a>
+      
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+  const pid = sessionStorage.getItem('pid_corporateRecruitmentManagementWebApplication');
+  
+  let dataInfo;
+  
+  	fetch(`test?id=${pid}`)
+	.then(response => response.json()) 
+	.then(data => {
+	  console.log(data);
+	})
+	.catch(error => {
+	  console.error('Error fetching data:', error);
+	});
+  	
+  	
+  </script>
+</body>
+</html>
